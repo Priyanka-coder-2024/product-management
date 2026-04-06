@@ -50,4 +50,21 @@ public class ProductService {
 
     }
 
+    public String updateProduct(Products newProducts){
+        Optional<Products> products= getProduct(newProducts.getProductId());
+        if(products.isPresent()) {
+            Products oldProduct = products.get();
+            oldProduct.setProductName(newProducts.getProductName());
+            oldProduct.setProductPrice(newProducts.getProductPrice());
+            oldProduct.setProductDescription(newProducts.getProductDescription());
+            productRepository.save(oldProduct);
+            return "Product Updated Successfully..";
+        }else{
+            return "Product Not Found With: "+newProducts.getProductId();
+
+        }
+
+
+    }
+
 }

@@ -36,4 +36,9 @@ public class ProductController {
         return productService.searchProduct(productId);
     }
 
+    @PutMapping("/updateProduct")
+    public String updateProduct(@RequestBody  Products newProducts){
+        return productService.updateProduct(newProducts);
+    }
+
 }
