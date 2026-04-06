@@ -28,7 +28,7 @@ public class ProductSecurityConfig {
                 ).httpBasic(withDefaults());
                 return http.build();
     }
-/*
+
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.builder()
@@ -43,5 +43,4 @@ public class ProductSecurityConfig {
     public PasswordEncoder passwordEncoder(){
        return new BCryptPasswordEncoder();
     }
-*/
 }
