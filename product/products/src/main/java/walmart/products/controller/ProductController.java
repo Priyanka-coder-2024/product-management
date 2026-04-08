@@ -13,11 +13,12 @@ public class ProductController {
     private final ProductService productService;
 
     public ProductController(ProductService productService) {
+
         this.productService=productService;
     }
 
     @GetMapping("/showProduct")
-    public List<Products> showAllProducts(){
+    public List<Products> showAllProducts() {
         return productService.showProduct();
     }
 
